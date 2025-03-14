@@ -26,7 +26,7 @@ jobs:
           cd /home/proyecto/BIXA/
           git pull origin main
           git status
-          docker stop bixa-app
-          docker rm bixa-app
-          docker build -t bixa .
-          docker run -d -it -p 5002:80 --restart unless-stopped --name bixa bixa
+          docker stop bixa
+          docker rm bixa
+          docker build -t bixa-image .
+          docker run -d -it -p 5002:80 --restart unless-stopped --name bixa bixa-image
